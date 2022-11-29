@@ -1,0 +1,13 @@
+.modal{
+    background-color: rgb(93, 93, 93);
+    color: orange;
+}
+    
+.modal-footer{
+    background-color: rgb(93, 93, 93) !important;
+    color: orange !important;
+}
+
+.modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-small, .modal .modal-footer .btn-flat {
+    color: orange !important;
+}

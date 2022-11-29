@@ -63,10 +63,26 @@ nav .nav-wrapper {
     border-radius: 100%;
 }
 
+.input-field input:focus+label{
+    color: yellow !important;
+}
 
+.input-field input[type=text]:focus{
+    border-bottom: 1px solid yellow !important;
+    box-shadow: 0 1px 0 0 yellow !important;
+}
 
+.input-field input:focus{
+    border-bottom: 1px solid yellow !important;
+    box-shadow: 0 1px 0 0 yellow !important;
+}
 
+.input-field .prefix.active{
+    color: yellow !important;
+}
 
-
-
-
+input.valid:not(.browser-default){
+    border-bottom: 1px solid #009dff !important;
+    -webkit-box-shadow: 0 1px 0 0 #009dff !important;
+    box-shadow: 0 1px 0 0 #009dff !important;
+}
