@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'Fjalla One';
+    src: url(../fonts/FjallaOne-Regular.ttf);
+    /* src: url(../fonts/FjallaOne-Regular.ttf) format('woff2'); */
+}
+
+body{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+@media print{
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+p:hover{
+    color: red;
+}
+
+p:visited{
+    color: blue;
+}
+
+p:focus{
+    color: blue;
+}
+
+div p:nth-child(2){
+    color: blue;
+}
+
+div p:first-child{
+    color: blue;
+}
+
+div p:last-child{
+    color: blue;
+}
+
+input[type="text"]{
+    border: 1px solid red;
+}
+
+div{
+    background-color: aqua;
+}
+
+body>div{
+    background-color: green;
+}

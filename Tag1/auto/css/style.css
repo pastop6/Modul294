@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Fjalla One';
+    src: url(../fonts/FjallaOne-Regular.ttf);
+    /* src: url(../fonts/FjallaOne-Regular.ttf) format('woff2'); */
+}
+
+body{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+table, th, td{
+    border: solid black 3px;
+}

@@ -9,33 +9,12 @@
     <meta name="copyright" content="Pascal Tobolik">
     <meta name="description" content="Erste Website">
     <meta name="keywords" content="Neue, Website, Neu, Websites, Webdesign, Modul">
-    <meta http-equiv="content-language" content="de">
     <meta name="robots" content="index, follow">
     <title>M294 Tag1 - Start</title>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-    
-    <style>
-        @font-face {
-            font-family: 'Fjalla One';
-            src: url(fonts/FjallaOne-Regular.ttf);
-            /* src: url(fonts/FjallaOne-Regular.ttf) format('woff2'); */
-        }
-
-        body{
-            font-family: 'Fjalla One', sans-serif;
-        }
-
-        
-        .material-symbols-outlined {
-            font-variation-settings:
-            'FILL' 1,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 48
-        }
-</style>
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body>
     <h1>Titel</h1>
@@ -48,5 +27,80 @@
     <span class="material-symbols-outlined">
         settings
     </span>
+
+    <div>test123
+        <div>jezgehts los</div>
+    </div>
+
+    <p id="meins">Was gheht</p>
+
+    <script>
+        document.getElementById('meins').innerHTML = 'Hallo Welt';
+        $('#meins').html('Hallo Welt');
+
+        document.write("<h4>Hallihalo welt</h4>");
+        $('body').append("<h4>Hallihalo welt</h4>");
+
+        document.getElementById('feld1').value = "Hallo Welt";
+        $('feld1').val("Hallo Welt");
+
+        // alert('Hallo Welt');
+
+        // console.log('Hallo welt der logs');
+        // console.warn('Hallo welt der warns');
+        // console.error('Hallo welt der errors');
+        // console.info('Hallo welt der infos');
+
+        // let a = 5;
+        // a = true;
+        // text = "hallo welto";
+
+        // console.log(text.length);
+        // console.log(text.toUpperCase());
+        // console.log(text.toLowerCase());
+
+        // // slice(start, end)
+        // console.log(text.slice(2,7));
+
+        // //substr(start, lenght)
+        // console.log(text.substr(2,7));
+
+        // //substring(start, lenght)
+        // console.log(text.substring(2,7));
+
+        // console.log(`bumm ${text}`);
+
+        // let tags = ["HTML", "CSS", "JS"];
+        // console.log(tags);
+
+        // for (let i = 0; i < tags.length; i++){
+        //     console.log(tags[1]);
+        // }
+        // tags.forEach(item => {
+        //     console.log(item);
+        // })
+
+        //Objects
+        let cars = {car:"Honda", model:"Civic", year:1998};
+        Object.entries(cars).forEach(element => {
+            const [key, value] = element;
+            console.log(key, value);
+        });
+
+        console.log(cars.model);
+
+        function myDisplay(some){
+            console.log(some);
+            return some;
+        }
+
+        function myCalculator(num1, num2, MyCallback){
+            let sum = num1 + num2;
+            MyCallback(sum);
+        }
+        let x = myCalculator(5, 5, myDisplay);
+        console.log(x);
+    </script>
+
 </body>
 </html>
