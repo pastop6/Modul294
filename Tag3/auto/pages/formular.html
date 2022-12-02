@@ -1,0 +1,95 @@
+<div class="row">
+    <form class="col s12 m12">
+      <div class="row">
+        <div class="input-field col s12 m6">
+          <i class="material-icons prefix">directions_car_filled</i>
+          <input id="FeldName" type="text" class="validate">
+          <label for="FeldName">Name</label>
+        </div>
+        
+        <div class="input-field col s12 m6">
+          <i class="material-icons prefix">handyman</i>
+          <input id="FeldNummer" type="tel" class="validate">
+          <label for="FeldNummer">Marke</label>
+        </div>
+
+        <div class="input-field col s12 m6">
+          <i class="material-icons prefix">local_gas_station</i>
+          <input id="FeldTank" type="number" min="0" class="validate">
+          <label for="FeldTank">Tank</label>
+        </div>
+
+        <div class="input-field col s12 m6">
+          <i class="material-icons prefix">palette</i>
+          <input id="FeldColor" type="color" class="validate">
+          <label for="FeldColor"></label>
+        </div>
+
+        <div class="input-field col s12 m12">
+          <i class="material-icons prefix">airport_shuttle</i>
+          <select>
+            <option value="" disabled selected>Fahrzeugtypen</option>
+            <option value="Cabrio">Cabrio</option>
+            <option value="SUV">SUV</option>
+            <option value="Sportwagen">Sportwagen</option>
+          </select>
+      
+          <label for="FeldColor"></label>
+        </div>
+
+        <div class="input-field col s12 m6">
+          <i class="material-icons prefix">today</i>
+          <input id="FeldDate" type="text" class="datepicker">
+          <label for="FeldDate"></label>
+        </div>
+
+        <div class="input-field col s12 m6">
+          <i class="material-icons prefix">schedule</i>
+          <input id="FeldTime" type="text" class="timepicker">
+          <label for="FeldTime"></label>
+        </div>
+
+      </div>
+    </form>
+</div>
+
+<div class="row">
+  <form action="#">
+    <div class="col s4 center-align">
+      <p>
+        <label>
+          <input name="group1" type="radio" value="Benzin" checked/>
+          <span>Benzin</span>
+        </label>
+      </p>
+    </div>
+    <div class="col s4 m4 l4 center-align">
+      <p>
+        <label>
+          <input name="group1" type="radio" value="Diesel" />
+          <span>Diesel</span>
+        </label>
+      </p>
+    </div>
+    <div class="col s4 m4 l4 center-align">
+      <p>
+        <label>
+          <input name="group1" type="radio" value="Hybrid" />
+          <span>Hybrid</span>
+        </label>
+      </p>
+    </div>
+  </form>
+</div>
+
+
+<!-- <button id="testclick">klick mich</button> -->
+
+<!-- <button onclick="functionjaja();">
+    jaa
+</button>
+<script>
+    function functionjaja() {
+        alert("jaja");
+    }
+</script> -->
