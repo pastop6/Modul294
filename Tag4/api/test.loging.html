@@ -5,9 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
     <title>Login</title>
 </head>
 <body>
+    <input type="text" name="username" id="username">
+    <br>
+    <input type="password" name="password" id="password">
+    <hr>
+    <button id="login">Login</button>
+    <button id="logout">Logout</button>
+
+
+    <script>
+        $('#login').click(function (e) { 
+            e.preventDefault();
+            var username = $("#username").val();
+            var password = $("#password").val();
+            $.ajax({
+                type: "LOGIN",
+                url: "api.php?username="+username+"&password="+password,
+                dataType: "JSON",
+                success: function (response) {
+                    console.log(response["jwt"].admin);
+                    if (response["jwt"].admin == true) {
+                        console.log("Admin");
+                        $("#username").hide();
+                        $("#password").hide();
+                        $("#login").hide();
+                        $("#logout").show();
+                        M.toast({html: 'Hallo Admin', classes: "rounded green"});
+                    } else {
+                        M.toast({html: 'Du bist nicht der Admin', classes: "rounded red"});
+                    }
+                }
+            });
+        });
+        $("#logout").click(function (e) { 
+            e.preventDefault();
+            $.ajax({
+                type: "LOGOUT",
+                url: "api.php",
+                dataType: "JSON",
+                success: function (response) {
+                    console.log(response);
+                    if (response["jwt"].admin == false) {
+                        console.log("Admin");
+                        $("#username").show();
+                        $("#password").show();
+                        $("#login").show();
+                        $("#logout").hide();
+                    }
+                }
+            });
+        });
+    </script>
     
 </body>
 </html>

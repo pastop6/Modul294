@@ -28,39 +28,67 @@ $("#save").click(function (e) {
     e.preventDefault();
     // alert("Gespeichert");
     var name = $("#FeldName").val();
-    var marke = $("#FeldMarke").val();
-    var tank = $("#FeldTank").val();
-    var color = $("#FeldColor").val();
-    var typ = $("#FeldTyp").val();
+    var kraftstoff;
+    var farbe = $("#FeldColor").val();
+    var bauart = $("#FeldTyp").val();
+    var tanken = $("#FeldTank").val();
     var date = $("#FeldDate").val();
-    var time = $("#FeldTime").val();
-
-    // Editieren
-    $('.editCar').click(function (e) { 
-        e.preventDefault();
-        var id = $(this).attr("data-id");
-        // delete
-        console.log(id);
-        $.ajax({
-            type: "POST",
-            url: "api.php?id="+id,
-            data: {
-                name: FeldName,
-                kraftstoff: "Benzin",
-                farbe: FeldColor,
-                bauart: FeldTyp,
-                tanken: FeldTank,
-                date: FeldDate,
-                bemerkung: FeldBeschreibung,
-                status: "checked"
-            },
-            dataType: "JSON",
-            success: function (response) {
-                console.log(response);
-                ListeDarstellen();
-            }
-        });
+    var bemerkung = $("#FeldBeschreibung").val();
+    var status = "checked";
+    $("input:radio").each(function(){
+        if($(this).prop("checked")){
+            kraftstoff = $(this).val();
+        };
     });
+
+    // Bearbeiten
+    
+    $.ajax({
+        type: "POST",
+        url: "api.php",
+        data: {
+            name: name,
+            kraftstoff: kraftstoff,
+            farbe: farbe,
+            bauart: bauart,
+            tanken: tanken,
+            date: date,
+            bemerkung: bemerkung,
+            status: status
+        },
+        dataType: "JSON",
+        success: function (response) {
+            console.log(response);
+            ListeDarstellen();
+        }
+    });
+
+    // // Editieren
+    // $('.editCar').click(function (e) { 
+    //     e.preventDefault();
+    //     var id = $(this).attr("data-id");
+    //     // delete
+    //     console.log(id);
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "api.php?id="+id,
+    //         data: {
+    //             name: FeldName,
+    //             kraftstoff: "Benzin",
+    //             farbe: FeldColor,
+    //             bauart: FeldTyp,
+    //             tanken: FeldTank,
+    //             date: FeldDate,
+    //             bemerkung: FeldBeschreibung,
+    //             status: "checked"
+    //         },
+    //         dataType: "JSON",
+    //         success: function (response) {
+    //             console.log(response);
+    //             ListeDarstellen();
+    //         }
+    //     });
+    // });
 
 
     var Kraftstoff = "";
@@ -83,9 +111,6 @@ $(document).ready(function(){
     $('.timepicker').timepicker();
   });
 
-$('.timepicker').pickatime({
-    twelvehour: false,
-    });
 
 
 

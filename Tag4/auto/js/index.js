@@ -120,6 +120,9 @@ $('#addCar').click(function (e) {
 $('.editCar').click(function (e) {
     e.preventDefault();
     $('#ModalTitle').html('Auto editieren');
+    $("#ModalInhalt").load("pages/formular.html", function(){
+        $.getScript("js/formular.js");
+    });
     $('#save').html('Bearbeiten');
 });
 
