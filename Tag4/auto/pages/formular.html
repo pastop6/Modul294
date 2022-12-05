@@ -33,8 +33,6 @@
             <option value="SUV">SUV</option>
             <option value="Sportwagen">Sportwagen</option>
           </select>
-      
-          <label for="FeldColor"></label>
         </div>
 
         <div class="input-field col s12 m6">
@@ -44,9 +42,9 @@
         </div>
 
         <div class="input-field col s12 m6">
-          <i class="material-icons prefix">schedule</i>
-          <input id="FeldTime" type="text" class="timepicker">
-          <label for="FeldTime">Zeit</label>
+          <i class="material-icons prefix">description</i>
+          <input id="FeldBeschreibung" type="text" class="validate">
+          <label for="FeldTime">Beschreibung</label>
         </div>
 
       </div>
@@ -76,6 +74,27 @@
         <label>
           <input name="group1" type="radio" value="Hybrid" />
           <span>Hybrid</span>
+        </label>
+      </p>
+    </div>
+  </form>
+</div>
+
+<div class="row">
+  <form action="#">
+    <div class="col s6 center-align">
+      <p>
+        <label>
+          <input name="group1" type="radio" value="Aktiv" checked/>
+          <span>Aktiv</span>
+        </label>
+      </p>
+    </div>
+    <div class="col s6 center-align">
+      <p>
+        <label>
+          <input name="group1" type="radio" value="Inaktiv" />
+          <span>Inaktiv</span>
         </label>
       </p>
     </div>

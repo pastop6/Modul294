@@ -1,5 +1,3 @@
-id;name
-1;Hans
-2;Peter
-5;Kurt
-6;mueller
+id;name;kraftstoff;farbe;bauart;tanken;date;bemerkung;status
+1;Opel;Diesel;blau;SUV;4;1.5.2000;Beschreibung 01;checked
+2;VW;Benzin;yellow;PKW;7;7.6.2017;Beschreibung 02;

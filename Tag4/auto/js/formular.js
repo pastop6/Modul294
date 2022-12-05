@@ -34,15 +34,33 @@ $("#save").click(function (e) {
     var typ = $("#FeldTyp").val();
     var date = $("#FeldDate").val();
     var time = $("#FeldTime").val();
-    // alert(name + " " + nummer);
 
-    console.log(name);
-    console.log(marke);
-    console.log(tank);
-    console.log(color);
-    console.log(typ);
-    console.log(date);
-    console.log(time);
+    // Editieren
+    $('.editCar').click(function (e) { 
+        e.preventDefault();
+        var id = $(this).attr("data-id");
+        // delete
+        console.log(id);
+        $.ajax({
+            type: "POST",
+            url: "api.php?id="+id,
+            data: {
+                name: FeldName,
+                kraftstoff: "Benzin",
+                farbe: FeldColor,
+                bauart: FeldTyp,
+                tanken: FeldTank,
+                date: FeldDate,
+                bemerkung: FeldBeschreibung,
+                status: "checked"
+            },
+            dataType: "JSON",
+            success: function (response) {
+                console.log(response);
+                ListeDarstellen();
+            }
+        });
+    });
 
 
     var Kraftstoff = "";
@@ -68,3 +86,39 @@ $(document).ready(function(){
 $('.timepicker').pickatime({
     twelvehour: false,
     });
+
+
+
+
+
+// $('#save').click(function(e){
+//     e.preventDefault();
+
+//     var name = $("#FeldName").val();
+//     var marke = $("#FeldMarke").val();
+//     var tank = $("#FeldTank").val();
+//     var color = $("#FeldColor").val();
+//     var typ = $("#FeldTyp").val();
+//     var date = $("#FeldDate").val();
+//     var time = $("#FeldTime").val();
+
+//     //insert
+//     $.ajax({
+//         type: "POST",
+//         url: "/Tag3/api.php",
+//         data: {
+//             name: name,
+//             kraftstoff: Kraftstoff,
+//             farbe: farbe,
+//             bauart: bauart,
+//             tanken: tank,
+//             date: date,
+//             bemerkung: bemerkung,
+//             status: 'check'
+//             },
+//         dataType: "json",
+//         success: function (response) {
+//             console.log(response);
+//             location.reload();
+//         }
+//     });
