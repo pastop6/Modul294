@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Autos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-wrapper light-blue darken-3">
+            <a class="brand-logo center titel">Autos</a>
+        </div>
+    </nav>
+    <br>
+
+    <!-- Add Button zum hinzufügen von Autos -->
+    <a id="addCar" href="#modal1" class="modal-trigger material-symbols-outlined rounded left">add</a>
+    <div style="clear: both"></div>
+
+
+
+    <!-- Modal Struktur -->
+    <div id="modal1" class="modal grey darken-3">
+        <div class="modal-content">
+            <h4 id="ModalTitle" class="deep-orange-text darken-3"></h4>
+            <p id="ModalInhalt" class="deep-orange-text darken-3"></p>
+        </div>
+        <div class="modal-footer grey darken-3">
+            <div class="row">
+                <div class="col s6">
+                    <div id="close" class="btn red left">Abbrechen</div>
+                </div>
+                <div class="col s6">
+                    <div id="save" class="btn green right">Speichern</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main></main>
+
+    <script id="template" type="text/x-handlebars-template">
+
+        <!-- Tabelle mit Fahrzeugen -->
+        <table class="centered striped responsive-table highlight">
+            <thead class="blue darken-2 grey-text text-lighten-4">
+                <tr>
+                    <th>Name</th>
+                    <th>Kraftstoff</th>
+                    <th>Farbe</th>
+                    <th>Fahrzeugtyp</th>
+                    <th>Tank</th>
+                    <th>Datum</th>
+                    <th>Status</th>
+                    <th>Aktionen</th>
+                </tr>
+            </thead>
+            <tbody class="text-align centerteal lighten-4">
+                {{# each auto}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{kraftstoff}}</td>
+                    <td>{{farbe}}</td>
+                    <td>{{bauart}}</td>
+                    <td>{{tanken}}</td>
+                    <td>{{date}}</td>
+                    <td>
+                        <div>
+                            <a class="material-symbols-outlined carStatus_ok">done</a>
+                        </div>
+                    </td>
+                    <td><div>
+                        <a href="#modal1" class="material-symbols-outlined driveCar">directions_car</a>
+                        <a href="#modal1" class="material-symbols-outlined modal-trigger editCar">edit</a>
+                        <a href="#modal1" class="material-symbols-outlined deleteCar">delete</a>
+                    </div></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </script>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
