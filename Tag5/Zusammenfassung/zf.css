@@ -1,0 +1,23 @@
+.text{
+    color: white;
+    background-color: black;
+}
+
+/* Font einbinden */
+@font-face {
+    font-family: 'Fjalla One';
+    src: url(../fonts/FjallaOne-Regular.ttf);
+    /* src: url(../fonts/FjallaOne-Regular.ttf) format('woff2'); */
+}
+
+body{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}

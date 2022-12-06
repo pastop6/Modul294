@@ -1,0 +1,26 @@
+{
+    "auto": [
+        {
+            "bauart": "SUV",
+            "bemerkung": "Beschreibung 01",
+            "date": "1.5.2000",
+            "farbe": "blau",
+            "id": "1",
+            "kraftstoff": "Diesel",
+            "name": "Opel",
+            "status": "checked",
+            "tanken": "4"
+        },
+        {
+            "bauart": "PKW",
+            "bemerkung": "Beschreibung 02",
+            "date": "6.7.2017",
+            "farbe": "gelb",
+            "id": "2",
+            "kraftstoff": "Benzin",
+            "name": "VW",
+            "status": "",
+            "tanken": "7"
+        }
+    ]
+}

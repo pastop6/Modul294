@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>API</title>
+</head>
+<body>
+    <input type="number" name="id" id="id" value="0">
+    <br>
+    <input type="text" name="name" id="name">
+    <br>
+    <input type="button" value="senden" id="senden">
+    <br>
+    <input type="button" value="delete" id="delete">
+
+
+    <script>
+        $('#delete').click(function (e) { 
+            e.preventDefault();
+            var id = $('#id').val();
+            // update
+            $.ajax({
+                type: "DELETE",
+                url: "api.php?id="+id,
+                dataType: "JSON",
+                success: function (response) {
+                    console.log(response);
+                }
+            });
+        });
+
+        $('#senden').click(function (e) { 
+            e.preventDefault();
+            var id = $('#id').val();
+            var name = $('#name').val();
+
+            if(0==id){
+                // insert
+                $.ajax({
+                    type: "POST",
+                    url: "api.php",
+                    data:{
+                        name: name,
+                        // feld123: 'wert123'
+                    },
+                    dataType: "JSON",
+                    success: function (response) {
+                        console.log(response);
+                    }
+                });
+            }
+            else{
+                // update
+                $.ajax({
+                    type: "POST",
+                    url: "api.php?id="+id,
+                    data:{
+                        name: name,
+                        // feld123: 'wert123'
+                    },
+                    dataType: "JSON",
+                    success: function (response) {
+                        console.log(response);
+                    }
+                });
+            }
+        });
+
+        // alle Daten aus der API holen
+        $.ajax({
+            type: "GET",
+            url: "api.php",
+            dataType: "JSON",
+            success: function (response) {
+                console.log(response['data'][1].name);
+            }
+        });
+
+        // nur einen Datensatz aus der API holen
+        $.ajax({
+            type: "GET",
+            url: "api.php?id=0",
+            dataType: "JSON",
+            success: function (response) {
+                console.log(response['data'][0].name);
+            }
+        });
+
+        // nur einen Datensatz aus der API holen mit Parameter
+        $.ajax({
+            type: "GET",
+            url: "api.php?id=99&name=Test",
+            dataType: "JSON",
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    </script>
+    
+</body>
+</html>

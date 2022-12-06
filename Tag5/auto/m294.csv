@@ -1,0 +1,6 @@
+id;name;kraftstoff;farbe;bauart;tanken;date;bemerkung;status
+7;Opel;Diesel;blau;SUV;4;1.5.2000;Beschreibung 01;checked
+8;VW;Benzin;yellow;PKW;7;7.6.2017;Beschreibung 02;
+9;Opel;Diesel;blau;SUV;4;1.5.2000;Beschreibung 01;checked
+10;VW;Benzin;yellow;PKW;7;7.6.2017;Beschreibung 02;
+11;Opel;Diesel;blau;SUV;4;1.5.2000;Beschreibung 01;checked
